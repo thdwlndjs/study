@@ -1,65 +1,67 @@
-package golang
+package main
 
 import "fmt"
 
 func main() {
-	var warrior = Character
-	var mage = Character
+	m := new(mage)
+	m.HP = 100
+	w := new(warrior)
+	w.HP = 120
 
-	warrior.attack(mage)
-	mage.attack(warrior)
-	warrior.defend()
-	mage.defend()
+	w.attack(m)
+	m.attack(w)
+	w.defend()
+	m.defend()
 }
 
-type mage interface {
-	attack()
+type Character interface {
+	attack(target Character)
 	defend()
 	getHealth() int
 	takeDamage(damage int)
 }
 
-type warrior interface {
-	attack()
-	defend()
-	getHealth() int
-	takeDamage(damage int)
+type mage struct {
+	HP int
+	Character
+}
+type warrior struct {
+	HP int
+	Character
 }
 
-type Character struct {
-	health int
-} //구조체는 초기화 선언이 불가
-
-func NewCharacter(initialHealth int) *Character {
-	return &Character{
-		health: initialHealth,
-	}
-} //생성자함수
-
-func (m *Character) attack(target Character) {
+func (m mage) attack(target Character) {
 	fmt.Println("마법사가 파이어볼을 던짐")
-	takeDamage(mage, 20)
+	target.takeDamage(20)
 }
-func (m *Character) defend() {
-	fmt.println("마법사가 보호 버프 사용")
-}
-func (m *Character) getHealth() {
-	return m.health
-}
-func (m *Character) takeDamage(target Character, damage int) {
-	target.health -= damage
-	fmt.Println("마법사가" + damage + "피해를 받았습니다, 남은체력: " + getHealth())
-}
-func (w *Character) attack(target Character) {
-	fmt.Println("전사가 검으로 공격함")
-	takeDamage(warrior, 15)
-}
-func (w Character) defend() {
+func (m mage) defend() {
+	fmt.Println("마법사가 보호 버프 사용")
 
 }
-func (w Character) getHealth() string {
-	return w.health
+func (m mage) getHealth() int {
+	return m.HP
 }
-func (w Character) takeDamage(damage int) {
-	w.attack()
+func (m mage) takeDamage(damage int) {
+	m.HP -= damage
+	fmt.Println("마법사가 ", damage, "피해를 받았습니다, 남은체력: ", m.getHealth())
 }
+func (w warrior) attack(target Character) {
+	fmt.Println("전사가 검으로 공격함")
+	target.takeDamage(15)
+}
+func (w warrior) defend() {
+	fmt.Println("전사가 방패로 방어")
+}
+func (w warrior) getHealth() int {
+	return w.HP
+}
+func (w warrior) takeDamage(damage int) {
+	w.HP -= damage
+	fmt.Println("전사가 ", damage, "피해를 받았습니다, 남은체력: ", w.getHealth())
+}
+
+// func NewCharacter(initialHealth int) *Character {
+// 	return &Character{
+// 		health: initialHealth,
+// 	}
+// } //생성자함수

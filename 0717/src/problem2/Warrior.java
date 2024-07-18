@@ -12,15 +12,13 @@ public class Warrior implements Character {
     // 전사 검 공격은 15데미지
     @Override
     public void attack(Character target) {
-        // TODO 구현
-    	System.out.println("전사가 검으로 공격함");
-    	target.takeDamage(15);
+        System.out.println("전사가 검으로 공격함");
+        target.takeDamage(15);
     }
 
     @Override
     public void defend() {
-        // TODO 구현
-    	System.out.println("전사가 방패로 방어");
+        System.out.println("전사가 방패로 방어");
 
     }
 
@@ -31,8 +29,7 @@ public class Warrior implements Character {
 
     @Override
     public void takeDamage(int damage) {
-        // TODO 구현
-    	health-=damage;//방어하지 못했으면, 체력감소
-    	System.out.println("전사가 "+damage+"피해를 받았습니다, 남은체력: "+getHealth());
+        health -= damage;// 방어하지 못했으면, 체력감소
+        System.out.println("전사가 " + damage + "피해를 받았습니다, 남은체력: " + getHealth());
     }
 }
