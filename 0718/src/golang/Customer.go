@@ -28,6 +28,16 @@ func NewCustomer(name string, age, memberID int) *Customer {
 }
 
 func main() {
+	// c := new(Customer)
+	// c.name = "박자바"
+	// c.age = 25
+	// c.memberID = 1111
+	// c.enter()
+	// d := new(Customer)
+	// d.name = "송코딩"
+	// d.age = 20
+	// d.memberID = 2222
+	// d.enter()
 	c := NewCustomer("박자바", 25, 1111)
 	c.enter()
 	d := NewCustomer("송코딩", 20, 2222)
