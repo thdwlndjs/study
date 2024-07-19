@@ -26,13 +26,18 @@ public class PaymentSystem3 {
             p = new KakaoPay3();
         } else if (paymentMethod == 3) {
             p = new NaverPay3();
+        } // 이거 그건데
+
+        if (p instanceof KakaoPay3) {
+            KakaoPay3 k = new KakaoPay3();
+            k.discount(paymentAmount);
         }
 
-        if (p instanceof KakaoPay3 || p instanceof NaverPay3) {
-            // 형변환?
+        if (p instanceof NaverPay3) {
+            p.printReceipt();
+            p.pay(paymentAmount);
+
         }
-        p.pay(paymentAmount);
-        p.printReceipt();
+
     }
-
 }
