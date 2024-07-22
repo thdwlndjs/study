@@ -1,4 +1,4 @@
-package CH134;
+package Student;
 
 public class Middle extends Student{
 

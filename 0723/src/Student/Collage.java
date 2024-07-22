@@ -1,20 +1,20 @@
-package CH134;
+package Student;
 
 public class Collage extends Student{
-	private int course;
-	public Collage(String name, int grade,int course) {
-		super(name,grade);
+	protected int course;
+	public Collage(String name, int grade, String teacher,int course) {
+		super(name,grade,teacher);
 		this.course=course;
 		System.out.println("Student 매개변수가있는생성자 호출");
 	}
-
+	@Override
 	public String getStudInfo() {
 		System.out.println("Student 클래스의 getStdInfo() 호출");
-		return "이름: "+name+" 학년: "+grade;
+		return "이름: " + name + " 학년: " + grade;
 	}
 	@Override
 	public String getTeacher() {
-		return "지도 교수님: "+teacher+"담임선생님: 손흥민";
+		return "지도 교수님: " + teacher + "담임선생님: 손흥민";
 	}
 //클래스의 객체타입 변환
 // 클래스의 타입변환은 상속관계의 클래스들 간에서만 가능합니다

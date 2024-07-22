@@ -1,10 +1,18 @@
 {
-    "type": "java",
-    "name": "Debugging Java",
-    "request": "launch",
-    "cwd": "${workspaceFolder}",
-    "console": "externalTerminal", // 외부 터미널로 설정하기
-    "stopOnEntry": false,
-    "mainClass": "",
-    "args": ""
+    "configurations": [
+        {
+            "type": "java",
+            "name": "SuTest",
+            "request": "launch",
+            "mainClass": "java.SuTest",
+            "projectName": "study_a51e0a1b"
+        },
+        {
+            "name": "Launch file",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${file}"
+        }
+    ]
 }
