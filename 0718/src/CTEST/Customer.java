@@ -1,14 +1,16 @@
-package java;
+package CTEST;
 
 public class Customer extends Person{
 
 	int memberID;
 	
+	public Customer() {}
 	public Customer(String name, int age,int memberID) {
-		super(name, age);
+		super.name=name;
+		super.age=age;
 //		this.name=name;
 //		this.age=age;
-//		this.memberID=memberID;
+		this.memberID=memberID;
 	}
 	void enter() {
 		System.out.println("회원번호: "+ memberID+" "+name+" , "+age+"세 입장");

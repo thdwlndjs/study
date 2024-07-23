@@ -1,4 +1,4 @@
-package java;
+package CTEST;
 //super()
 //부모클래스의 생성자 호출할때 사용
 //자식클래스(매개변수)
@@ -8,7 +8,7 @@ package java;
 public class Person {
 	String name;
 	int age;
-	 
+	public Person() {}
 	public Person(String name, int age) {
 		 this.name=name;
 		 this.age=age;
