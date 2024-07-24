@@ -2,17 +2,24 @@
     "configurations": [
         {
             "type": "java",
-            "name": "SuTest",
+            "name": "CTest",
             "request": "launch",
-            "mainClass": "java.SuTest",
+            "mainClass": "CTEST.CTest",
             "projectName": "study_a51e0a1b"
         },
         {
-            "name": "Launch file",
-            "type": "go",
+            "type": "java",
+            "name": "CTEST",
             "request": "launch",
-            "mode": "debug",
-            "program": "${file}"
+            "mainClass": "java.CTEST",
+            "projectName": "study_a51e0a1b"
+        },
+        {
+            "type": "java",
+            "name": "Launch Java Program",
+            "request": "launch",
+            "mainClass": ""
         }
     ]
+
 }
