@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"os"
-
 	"path/filepath"
 )
 
@@ -13,7 +12,8 @@ func main() {
 		return
 	}
 	word := os.Args[1]
-	file := os.Args[2:]
+	files := os.Args[2:]
+	fmt.Println("찾으려는 단어:", word)
 	PrintAllFiles(files)
 }
 func GetFileList(path string) ([]string, error) {
