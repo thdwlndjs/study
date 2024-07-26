@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class TTest {
-	public static int inputScore(Scanner Scan) throws NumberFormatException{
+	public static int inputScore() throws NumberFormatException{
 		int score = 0;
 		Scanner sc = new Scanner(System.in);
 		String str=sc.next();
@@ -19,5 +19,7 @@ public class TTest {
 		catch(NumberFormatException e){
 			System.out.println("숫자만 입력하세요");
 		}
+		System.out.println("프로그램종료");
 	}
+	
 }
