@@ -47,7 +47,7 @@ func (m Mid) getTeacher() string {
 	return "담임선생님: 손흥민"
 }
 func (c Collage) getTeacher() string {
-	return "지도 교수님: " + c.teacher + "담임선생님: 손흥민"
+	return "지도 교수님: " + c.teacher + " 담임선생님: 손흥민"
 }
 
 func getStudInfo(info infor) {
@@ -60,6 +60,7 @@ func getTeacher(info infor) {
 
 func main() {
 	var c Collage = Collage{name: "홍길동", grade: 2, teacher: "차범근", course: 22}
-	c.getStudInfo(c)
+	getStudInfo(c)
+	getTeacher(c)
 
 }
