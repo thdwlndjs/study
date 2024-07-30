@@ -26,13 +26,13 @@ func main() {
 		}
 		Ans := 0
 		Answer := 0
-		for j := n - 1; j >= 0; j-- {
-			if (k / value[j]) >= 1 {
-				Ans = k / value[j]
-				k = k % value[j]
-				if value[j] != value[j-1] {
-					Answer += Ans
-				}
+		//n은 동전수 k는 총액
+		for j := n - 1; j >= 0; j-- { //인덱스 j는 n-1에서 0까지 내려감
+			if (k / value[j]) >= 1 { //총액을 큰 값부터 나눠가며 1보다 같거나 크면,
+				Ans = k / value[j] //몫을 저장하고
+				k = k % value[j]   //나머지를 넘겨줌
+				Answer += Ans      //저장
+
 				// fmt.Println(value[j], " != ", value[j-1], " ", Answer, "+=", Ans)
 
 			}
