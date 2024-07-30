@@ -8,7 +8,7 @@ func main() {
 		"B": "Banana",
 		"C": "Charlie",
 	}
-	m = make(map[int]string)
+	m := make(map[int]string)
 	//추가 혹은 갱신
 	m[901] = "Apple"
 	m[134] = "Grape"

@@ -8,15 +8,6 @@ import (
 	"strings"
 )
 
-func contains(slice []string, value string) bool {
-	for _, item := range slice {
-		if item == value {
-			return true
-		}
-	}
-	return false
-}
-
 func main() {
 	reader := bufio.NewReader(os.Stdin)
 	writer := bufio.NewWriter(os.Stdout)
@@ -31,11 +22,6 @@ func main() {
 		fmt.Fscanln(reader, &a)
 		str := strings.Index(a, ".") + 1
 		extensionName := a[str:]
-		if contains(s, extensionName) == true {
-			m[extensionName]++
-		} else {
-			s = append(s, extensionName)
-		}
 	}
 	sort.Strings(s)
 	for _, eName := range s {

@@ -15,20 +15,18 @@ func main() {
 	var a string
 	defer writer.Flush()
 	count := n
-	var i int
-	var j int
-	var k int
 
-	for i = 0; i < n; i++ {
+
+	for i := 0; i < n; i++ {
 		s := make([]byte, 0)
 		fmt.Fscanln(reader, &a)
 		c := 0
 		// s = append(s, a)
 		cnt := 0
 
-		for j = 1; j < len(a); j++ {
+		for j := 1; j < len(a); j++ {
 			if a[j-1] != a[j] { //문자가 바뀌면, 배열에 저장된 문자인지 확인
-				for k = 0; k < len(s); k++ { //얘가 그냥 안됨 실행이
+				for k := 0; k < len(s); k++ { //얘가 그냥 안됨 실행이
 					//범위지정오류(len(a)-1해놓고 "<"사용
 					//>>인덱스가 len(a)-2 까지만 반복됨 >> 인덱스 확인
 					if a[j] == s[k] {
