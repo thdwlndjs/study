@@ -46,3 +46,4 @@ func main() {
 }
 
 // sort.Slice(s, func(i, j int) bool { return s[i] < s[j] }) //slice로 배열 정렬하기 코드는 짧은데 시간복잡도가 높음
+//얘를 다시 봐야함

@@ -6,13 +6,13 @@ import (
 	"github.com/xuri/excelize/v2"
 )
 
-// Convert column number to Excel column name
+// 그냥 기본함수급이네,,
 func columnNumberToExcelColumn(n int) string {
 	result := ""
 	for n > 0 {
-		n-- // 1-based index adjustment
+		n-- // 왜 빼는거임??
 		remainder := n % 26
-		result = string('A'+remainder) + result
+		result = string('A'+remainder) + result //이게뭐람
 		n /= 26
 	}
 	return result
