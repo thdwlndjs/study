@@ -1,14 +1,18 @@
 package main
 
 import (
+	"bufio"
 	"database/sql"
 	"fmt"
 	"log"
+	"os"
 	"time"
 
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/xuri/excelize/v2"
 )
+
+var writer *bufio.Writer = bufio.NewWriter(os.Stdout)
 
 func getDatabaseData() ([][]string, error) {
 	// MariaDB 연결 정보
@@ -92,7 +96,7 @@ func main() {
 	sheetName := "Sheet1"
 	sheet, err := f.NewSheet(sheetName)
 	if err != nil {
-		fmt.Println(err)
+		fmt.Fprintln(writer, err)
 		return
 	}
 
@@ -122,7 +126,7 @@ func main() {
 
 	f.SetActiveSheet(sheet)
 	if err := f.SaveAs(filename); err != nil {
-		fmt.Println(err)
+		fmt.Fprintln(writer, err)
 	}
-	fmt.Println("엑셀 파일이 생성되었습니다:", filename)
+	fmt.Fprintln(writer, "엑셀 파일이 생성되었습니다:", filename)
 }
